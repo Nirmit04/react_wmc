@@ -14,14 +14,14 @@ const LoginForm = (props: loginProps) =>{
 
 
     const submitFormData = (event:any) =>{
-
+        // Page won't refresh because of preventDefault
         if (event) {
             event.preventDefault();
         }
 
         if(formDetails.email && isValid(formDetails.email)){
-            // Send the data or store it in session storage
-            setError('')
+            // Send the data or store it in session storage and
+            setError(' ')
 
         }
     }
@@ -34,7 +34,7 @@ const LoginForm = (props: loginProps) =>{
     }
 
     const isValid = (email: any)  => {
-        let error = null;
+        let error = ' ';
         if (!isEmail(email)) {
             error = `${email} is not a valid email address.`;
         }
