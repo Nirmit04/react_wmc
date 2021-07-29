@@ -4,6 +4,7 @@ import { routes } from "./routeConstants";
 import Public1 from "../modules/public1";
 import Public2 from "../modules/public2";
 import Public3 from "../modules/public3";
+import LoginForm from "../login/LoginForm";
 
 export default function PublicRouter(): ReactElement {
   const history = useHistory();
@@ -19,7 +20,7 @@ export default function PublicRouter(): ReactElement {
 
   return (
     <Switch>
-      <Route exact path={routes.root} component={login} />
+      <Route exact path={routes.root} component={LoginForm} />
       <Route exact path={routes.public.public1} component={Public1} />
       <Route exact path={routes.public.public2} component={Public2} />
       <Route exact path={routes.public.public3} component={Public3} />
