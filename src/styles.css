@@ -19,6 +19,8 @@
     color: white;
 }
 
+
+
 .login-form{
     width: 100%;
     display: flex;
@@ -35,6 +37,7 @@
     padding-left: 80px;
     border-radius: 20px;
     box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+    height: 350px;
 }
 
 .login-text{
@@ -49,6 +52,11 @@
     justify-content: center;
     align-items: center;
     padding-top: 5vh;
+}
+
+.logo {
+    width:400px;
+    height:400px
 }
 
 label {
@@ -70,6 +78,7 @@ label {
     font-size: 11pt;
     transition: 1s;
     outline: none;
+    width: 332px;
 }
 
 .password {
@@ -85,6 +94,7 @@ label {
     font-size: 11pt;
     transition: 1s;
     outline: none;
+    width: 332px;
 }
 
 .login-box.has-error{
@@ -98,7 +108,7 @@ label {
 
 
 .login-btn{
-    width: 75%;
+    width: 85%;
     justify-content: center;
     align-items: center;
     background-color: rgb(48,172,251);

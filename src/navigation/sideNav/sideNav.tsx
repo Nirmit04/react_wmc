@@ -1,7 +1,7 @@
 import "./SideMenu.scss";
 import React, { ReactElement, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom"
 import StorageService from "../../services/storage";
 import { InternalRoutingUrls } from "./InternalRoutingUrls";
 
