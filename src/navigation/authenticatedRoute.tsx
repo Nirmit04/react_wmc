@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { routes } from "./routeConstants";
 
@@ -9,7 +8,7 @@ const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
       render={(props) => {
         const tokens: any = localStorage.getItem("token");
         const user = localStorage.getItem("user");
-        if (tokens && tokens.accessToken && user) {
+        if (tokens && user) {
           return <Component {...props} />;
         } else {
           localStorage.clear();

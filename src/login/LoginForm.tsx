@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { routes } from "../navigation/routeConstants";
 
 interface loginProps {
   showLogin: boolean;
@@ -7,7 +9,7 @@ interface loginProps {
 const LoginForm = (props: loginProps) => {
   const [error, setError] = useState("");
   const [formDetails, setFormDetails] = useState({ email: "", password: "" });
-
+  const history = useHistory();
   const submitFormData = (event: any) => {
     if (event) {
       event.preventDefault();
@@ -15,6 +17,10 @@ const LoginForm = (props: loginProps) => {
 
     if (formDetails.email && isValid(formDetails.email)) {
       // Send the data or store it in session storage
+      localStorage.setItem('token','aaaa');
+      localStorage.setItem('user','aaaa');
+      
+      history.push(routes.private.private1)
       setError("");
     }
   };

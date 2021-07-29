@@ -20,18 +20,18 @@ export default function PrivateRouter(): ReactElement {
 
   return (
     <div>
-      {getAllowedRoutes()?.includes(window.location.pathname) ? (
+      {/* {getAllowedRoutes()?.includes(window.location.pathname) ? ( */}
         <div>
           {/* Call navbar */}
           <Switch>
-            <Route exact path={routes.private.private1} component={Private1} />
+            <Route path={routes.private.private1} component={Private1} />
             <Route exact path={routes.private.private2} component={Private2} />
             <Route exact path={routes.private.private3} component={Private3} />
           </Switch>
         </div>
-      ) : (
+      {/* ) : (
         <Route component={() => <div>Private Router Not Found</div>} />
-      )}
+      )} */}
     </div>
   );
 }

@@ -6,8 +6,8 @@ export const routes = {
     public3: "/public3",
   },
   private: {
-    private1: "/private1",
-    private2: "/private2",
-    private3: "/private3",
+    private1: "/application/private1",
+    private2: "/application/private2",
+    private3: "/application/private3",
   },
 };

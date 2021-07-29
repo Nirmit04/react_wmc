@@ -9,8 +9,8 @@ const MainRouter = (): ReactElement => {
     <React.Fragment>
       <BrowserRouter>
         <Switch>
+          <AuthenticatedRoute path='/application' component={PrivateRouter} />
           <PublicRouter />
-          <AuthenticatedRoute component={PrivateRouter} />
         </Switch>
       </BrowserRouter>
     </React.Fragment>
