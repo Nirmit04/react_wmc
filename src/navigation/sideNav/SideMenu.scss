@@ -1,5 +1,6 @@
 @import "../../assets/mixins.scss";
 @import "../../assets/colors.scss";
+.sideNav{
 .nav__list {
   @include text(150%, 16px, normal, $blue6);
   list-style: none;
@@ -85,4 +86,5 @@
   text-align: center;
   margin-bottom: 24px;
   padding-top: 76px;
+}
 }

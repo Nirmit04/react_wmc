@@ -54,7 +54,7 @@ export default function SideMenu(): ReactElement {
 
     return (
         <React.Fragment>
-            <ul>
+            <ul className='sideNav'>
                 <Link to={InternalRoutingUrls.private1} id="reports" className={`nav__list${state.allRoutes.private1 ? " active" : ""}`}>
                     Private Route 1
                 </Link>
