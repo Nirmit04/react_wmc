@@ -1,7 +1,9 @@
 import React from "react";
+import Card from "../../components/atoms/card/card";
 
 function Public2() {
-  return <div>Public2</div>;
+  return <Card>Public2</Card>;
+
 }
 
 export default Public2;
