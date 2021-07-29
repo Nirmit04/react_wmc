@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
-import './styles.css'
+import React, { useState } from "react";
+import "./styles.css";
 import LoginForm from "./login/LoginForm";
+import MainRouter from "./navigation/mainRouter";
 
 const App = () => {
   return (
