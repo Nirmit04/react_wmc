@@ -1,43 +1,32 @@
 import { actionTypes } from "../actions/actionTypes";
 
 export interface ILoginSuccessResponse {
-  id: string;
-  fullName: string;
-  email: string;
-  countryCode: string;
-  phoneNumber: string;
-  isVerified: boolean;
-  profileURLId: string;
-  organization: {
+  accessToken: string;
+  refreshToken: string;
+  user: {
     id: string;
-    name: string;
-    label: string;
-    logoURL: string;
+    fullName: string;
+    email: string;
+    countryCode: string;
+    phoneNumber: string;
+    isVerified: boolean;
+    profileURLId: string;
+    organization: {
+      id: string;
+      name: string;
+      label: string;
+      logoURL: string;
+    };
+    roles: Array<string>;
   };
-  roles :Array<string>
 }
 
 export interface ILoginState {
-  loginResponse: ILoginSuccessResponse;
+  loginResponse: any;
 }
 
 const loginInitialState: ILoginState = {
-  loginResponse: {
-    id: "",
-    fullName: "",
-    email: "",
-    countryCode: "",
-    phoneNumber: "",
-    isVerified: false,
-    profileURLId: "",
-    organization: {
-      id: "",
-      name: "",
-      label: "",
-      logoURL: "",
-    },
-    roles:[]
-  },
+  loginResponse: null,
 };
 
 export const login = (

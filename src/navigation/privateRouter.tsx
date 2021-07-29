@@ -5,9 +5,12 @@ import Private1 from "../modules/private1";
 import Private2 from "../modules/private2";
 import Private3 from "../modules/private3";
 import SideMenu from "./sideNav/sideNav";
+import { useDispatch } from "react-redux";
+import { clearStore } from "../redux/actions/action";
 
 export default function PrivateRouter(): ReactElement {
   const history = useHistory();
+  const dispatch = useDispatch();
   const getAllowedRoutes = () => {
     const user = localStorage.getItem("user");
     if (!user) {
@@ -24,7 +27,15 @@ export default function PrivateRouter(): ReactElement {
     <div>
       {/* {getAllowedRoutes()?.includes(window.location.pathname) ? ( */}
       <div>
-        <button onClick={() => { localStorage.clear(); history.push('/') }}>Logout</button>
+        <button
+          onClick={() => {
+            localStorage.clear();
+            history.push("/");
+            dispatch(clearStore());
+          }}
+        >
+          Logout
+        </button>
         <SideMenu />
         <Switch>
           <Route path={routes.private.private1} component={Private1} />
