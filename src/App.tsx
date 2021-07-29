@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import './styles.css'
+import LoginForm from "./login/LoginForm";
 
 function App() {
+    const [showLogin,setShowLogin] = useState(false)
+
+  const handleClick = () =>{
+    setShowLogin((showLogin) => !showLogin);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+          { !showLogin &&
+        <span onClick={handleClick} className="loginIcon" > Log In</span>}
+          { showLogin &&
+          <LoginForm showLogin={showLogin}/>}
+      </div>
     </div>
   );
 }
