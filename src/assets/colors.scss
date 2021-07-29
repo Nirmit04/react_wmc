@@ -1,0 +1,56 @@
+/*
+* this are the available color palette
+*/
+
+$blue1: #19265e;
+$blue2: #323e70;
+$blue3: #3c5185;
+$blue4: #666f94;
+$blue5: #7f87a6;
+$blue6: #999fb7;
+$blue7: #b2b7c9;
+$blue8: #cccfdb;
+$blue9: #e5e7ed;
+$otherBlue1: #668796;
+$otherBlue2: #26305d;
+$white: #ffffff;
+$white2: #fefefe;
+$white3: #fbfbfd;
+$white4: #f9f9fa;
+$white5: #f9fafc;
+$gray1: #f2f4fa;
+$gray2: #fbfbfb;
+$gray3: #e5e5e5;
+$gray4: #b2b5b6;
+$yellow1: #f0b400;
+$yellow2: #ffc849;
+$orange1: #ff9800;
+$orange2: #ed8c14;
+$orange3: #f08800;
+$orange4: #ff8800;
+$orange5: #edae5d;
+$orange6: #f38a49;
+$orange7: #ffe0b2;
+$green1: #468f5a;
+$green2: #26c24c;
+$green3: #27ae60;
+$green4: #559352;
+$green5: #a6c44d;
+$green6: #219653;
+$red1: #f44336;
+$red2: #eb5757;
+$red3: #e94941;
+
+/*
+* Available gradient i the application
+*/
+
+$boxShadow: 0px 0px 8px rgba(64, 75, 122, 0.08), 0px 0px 16px rgba(64, 75, 122, 0.08);
+$buttonGradient: radial-gradient(49.96% 50.8% at 49.96% 49.86%, $orange4 0%, $orange3 100%);
+$gradient1: radial-gradient(50% 50% at 50% 50%, #4c65a5 0%, #323e70 100%);
+$textShadow: 0px 0px 2px rgba(255, 152, 0, 0.25);
+$verticalLine: linear-gradient(90deg, $orange1 14.98%, #ffc107 99.91%);
+$warning: rgba(87, 72, 2, 0.5);
+$error: rgba(173, 24, 24, 0.5);
+$success: rgba(6, 87, 2, 0.5);
+$info: rgba(25, 38, 94, 0.5);
