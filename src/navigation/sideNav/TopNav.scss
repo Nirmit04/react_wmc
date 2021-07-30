@@ -1,0 +1,47 @@
+@import "../../assets/mixins.scss";
+@import "../../assets/colors.scss";
+.sideNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  .logo1121 {
+    height: 46px;
+    width: 106px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .private_links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    .nav__list {
+      font-weight: 400;
+      font-size: 16px;
+      margin-left: 20px;
+      padding: 12px 0px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .active {
+      text-decoration: none;
+      color: red;
+      border-bottom: 1px solid black;
+    }
+    .logout {
+      margin-left: 64px;
+      border-radius: 4px;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .logout:hover {
+      background-color: #f08800;
+    }
+  }
+
+  padding: 0px 24px;
+  box-shadow: 0px 2px 8px rgba(64, 75, 122, 0.5),
+    0px 0px 16px rgba(64, 75, 122, 0.5);
+}
