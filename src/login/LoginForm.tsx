@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import postLoginDetails from "../redux/actions/action";
 import { ILoginState } from "../redux/reducers/reducer";
 import { IState } from "../redux/reducers";
+import StorageService from "../services/storage";
 
 interface loginProps {
   showLogin: boolean;
 }
-
+const storage = new StorageService();
 const LoginForm = (props: loginProps) => {
   const [error, setError] = useState("");
   const [formDetails, setFormDetails] = useState({ email: "", password: "" });
@@ -27,15 +28,17 @@ const LoginForm = (props: loginProps) => {
 
     if (formDetails.email && isValid(formDetails.email)) {
       // Send the data or store it in session storage
-      localStorage.setItem("token", "aaaa");
-      localStorage.setItem("user", "aaaa");
       dispatch(postLoginDetails({ name: "gadsgsa" }));
       setError("");
     }
   };
-  
+
   useEffect(() => {
     if (loginDetails && loginDetails !== {}) {
+      console.log(loginDetails);
+      
+      storage.setStorage("tokens", JSON.stringify({ accessToken: loginDetails.accessToken, refreshToken: loginDetails.refreshToken }));
+      storage.setStorage("userId", loginDetails.user.id);
       history.push(routes.private.private1);
     }
   }, [loginDetails]);
