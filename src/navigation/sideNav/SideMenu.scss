@@ -1,90 +1,44 @@
 @import "../../assets/mixins.scss";
 @import "../../assets/colors.scss";
-.sideNav{
-.nav__list {
-  @include text(150%, 16px, normal, $blue6);
-  list-style: none;
-  height: 56px;
-  padding-left: 24px;
-  margin-bottom: 2px;
+.sideNav {
   display: flex;
-  align-items: center;
-}
-.nav__list:hover {
-  color: white;
-  background: $otherBlue2;
-  transition: 0.15s cubic-bezier(0.46, 0.03, 0.52, 0.96);
-}
-.list-wrap {
-  border-bottom: 0.5px solid #7f87a6;
-}
-.list-title {
-  @include text(150%, 12px, 500, $blue8);
-  height: 56px;
-  padding: 20px 0px 12px 30px;
-}
-
-.__react_component_tooltip {
-  width: 180px;
-}
-
-.react-tooltip-lite {
-  @include text(150%, 12px, normal, $white);
-  width: 200px;
-  border-radius: 4px;
-  text-align: center;
-}
-.sidebar {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow-y: hidden;
-  background: $blue2;
-  width: 20%;
-  min-width: 226px;
-  z-index: 9;
   justify-content: space-between;
-  // -ms-overflow-style: none; /* Internet Explorer 10+ */
-  // scrollbar-width: none;
-}
-.sidebar:hover {
-  overflow-y: auto;
-}
-.sidebar::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.4);
-  background-color: transparent;
-}
-.sidebar::-webkit-scrollbar {
-  width: 4px;
-  background-color: transparent;
-}
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 6px;
-}
-.active {
-  background: $otherBlue2;
-  font-weight: 500;
-  color: $white;
-  position: relative;
-}
-.active::before {
-  font-style: normal;
-  content: "";
-  background-color: $orange4;
-  font-size: 45px;
-  position: absolute;
-  left: 0px;
-  top: 6px;
-  border-radius: 0px 4px 4px 0px;
-  width: 4px;
-  height: 44px;
-}
-.copyright {
-  @include text(null, 12px, normal, $blue5);
-  text-align: center;
-  margin-bottom: 24px;
-  padding-top: 76px;
-}
+  align-items: center;
+  background-color: #ffffff;
+  .logo1121 {
+    font-weight: 500;
+    font-size: 20px;
+  }
+  .private_links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    .nav__list {
+      font-weight: 400;
+      font-size: 16px;
+      margin-left: 20px;
+      padding: 12px 0px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+    }
+    .active {
+      text-decoration: none;
+      color: red;
+      border-bottom: 1px solid black;
+    }
+    .logout {
+      margin-left: 64px;
+      border-radius: 4px;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+    }
+    .logout:hover {
+      background-color: #f08800;
+    }
+  }
+
+  padding: 0px 24px;
+  box-shadow: 0px 2px 8px rgba(64, 75, 122, 0.5),
+    0px 0px 16px rgba(64, 75, 122, 0.5);
 }

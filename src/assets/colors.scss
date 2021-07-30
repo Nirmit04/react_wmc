@@ -45,8 +45,13 @@ $red3: #e94941;
 * Available gradient i the application
 */
 
-$boxShadow: 0px 0px 8px rgba(64, 75, 122, 0.08), 0px 0px 16px rgba(64, 75, 122, 0.08);
-$buttonGradient: radial-gradient(49.96% 50.8% at 49.96% 49.86%, $orange4 0%, $orange3 100%);
+$boxShadow: 0px 0px 8px rgba(64, 75, 122, 0.08),
+  0px 0px 16px rgba(64, 75, 122, 0.08);
+$buttonGradient: radial-gradient(
+  49.96% 50.8% at 49.96% 49.86%,
+  $orange4 0%,
+  $orange3 100%
+);
 $gradient1: radial-gradient(50% 50% at 50% 50%, #4c65a5 0%, #323e70 100%);
 $textShadow: 0px 0px 2px rgba(255, 152, 0, 0.25);
 $verticalLine: linear-gradient(90deg, $orange1 14.98%, #ffc107 99.91%);

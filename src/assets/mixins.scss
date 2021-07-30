@@ -1,39 +1,38 @@
 @mixin text($lineHeight, $fontSize, $fontWeight, $color) {
-    line-height: $lineHeight;
-    font-size: $fontSize;
-    font-weight: $fontWeight;
-    color: $color;
-    font-style: normal;
-    // font-family: Ubuntu, sans-serif;
-  }
-  @mixin inputBox($height, $width, $color, $borderRadius, $border, $padding) {
-    height: $height;
-    width: $width;
-    color: $color;
-    border-radius: $borderRadius;
-    border: $border;
-    padding: $padding;
-    box-sizing: border-box;
-    background-color: white;
-  }
-  @mixin button($height, $width, $color, $borderRadius, $boxShadow, $background) {
-    height: $height;
-    width: $width;
-    color: $color;
-    border-radius: $borderRadius;
-    box-shadow: $boxShadow;
-    background: $background;
-    box-sizing: border-box;
-    border: none;
-    cursor: pointer;
-  }
-  @mixin flex($flexDirection, $justifyContent: null, $alignItem: null) {
-    display: flex;
-    flex-direction: $flexDirection;
-    justify-content: $justifyContent;
-    align-items: $alignItem;
-  }
-  @mixin imgLink($imgName) {
-    background-image: url("https://dev-mindscribble-nir.s3.ap-south-1.amazonaws.com/adminPanelAssets/" + $imgName);
-  }
-  
+  line-height: $lineHeight;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+  font-style: normal;
+  // font-family: Ubuntu, sans-serif;
+}
+@mixin inputBox($height, $width, $color, $borderRadius, $border, $padding) {
+  height: $height;
+  width: $width;
+  color: $color;
+  border-radius: $borderRadius;
+  border: $border;
+  padding: $padding;
+  box-sizing: border-box;
+  background-color: white;
+}
+@mixin button($height, $width, $color, $borderRadius, $boxShadow, $background) {
+  height: $height;
+  width: $width;
+  color: $color;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  background: $background;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+}
+@mixin flex($flexDirection, $justifyContent: null, $alignItem: null) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItem;
+}
+@mixin imgLink($imgName) {
+  background-image: url("https://dev-mindscribble-nir.s3.ap-south-1.amazonaws.com/adminPanelAssets/" + $imgName);
+}

@@ -3,10 +3,9 @@ import { useHistory } from "react-router";
 import { routes } from "../navigation/routeConstants";
 import { useDispatch, useSelector } from "react-redux";
 import postLoginDetails from "../redux/actions/action";
-import { ILoginState } from "../redux/reducers/reducer";
 import { IState } from "../redux/reducers";
 import StorageService from "../services/storage";
-
+import "./loginForm.scss";
 interface loginProps {
   showLogin: boolean;
 }
@@ -35,9 +34,13 @@ const LoginForm = (props: loginProps) => {
 
   useEffect(() => {
     if (loginDetails && loginDetails !== {}) {
-      console.log(loginDetails);
-      
-      storage.setStorage("tokens", JSON.stringify({ accessToken: loginDetails.accessToken, refreshToken: loginDetails.refreshToken }));
+      storage.setStorage(
+        "tokens",
+        JSON.stringify({
+          accessToken: loginDetails.accessToken,
+          refreshToken: loginDetails.refreshToken,
+        })
+      );
       storage.setStorage("userId", loginDetails.user.id);
       history.push(routes.private.private1);
     }

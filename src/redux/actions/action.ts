@@ -10,7 +10,7 @@ export const clearStore = () => {
 const postLoginDetails = (data: any): any => {
   return async (dispatch: any) => {
     let p = await axios.post("https://demo7951933.mockable.io/login", data);
-    dispatch({ type: actionTypes.POST_LOGIN, payload: p.data.data })
+    dispatch({ type: actionTypes.POST_LOGIN, payload: p.data.data });
   };
 };
 

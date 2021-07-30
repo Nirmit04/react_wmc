@@ -12,7 +12,7 @@ const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
         if (tokens.accessToken && tokens.refreshToken && user) {
           return <Component {...props} />;
         } else {
-          localStorage.clear();
+          storgae.clearStorage();
           return (
             <Redirect
               to={{
