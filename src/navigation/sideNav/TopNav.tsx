@@ -1,4 +1,4 @@
-import "./SideMenu.scss";
+import "./TopNav.scss";
 import React, { ReactElement, useEffect, useState } from "react";
 import { Link, NavLink, useHistory } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -6,7 +6,8 @@ import StorageService from "../../services/storage";
 import { InternalRoutingUrls } from "./InternalRoutingUrls";
 import { useDispatch } from "react-redux";
 import { clearStore } from "../../redux/actions/action";
-
+import { routes } from "../routeConstants";
+import logo11122 from "../../assets/logo11122.png";
 export interface SideMenuState {
   allRoutes: {
     private1: boolean;
@@ -16,7 +17,7 @@ export interface SideMenuState {
 }
 
 const storage = new StorageService();
-export default function SideMenu(): ReactElement {
+export default function TopNav(): ReactElement {
   const history = useHistory();
   const dispatch = useDispatch();
   const logOut = () => {
@@ -27,7 +28,11 @@ export default function SideMenu(): ReactElement {
   return (
     <React.Fragment>
       <div className="sideNav">
-        <div className="logo1121">Watch Me Code</div>
+        <img
+          className="logo1121"
+          src={logo11122}
+          onClick={() => history.push(routes.private.dash)}
+        ></img>
         <div className="private_links">
           <NavLink
             to={InternalRoutingUrls.private1}

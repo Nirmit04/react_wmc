@@ -7,6 +7,7 @@ import { IState } from "../redux/reducers";
 import StorageService from "../services/storage";
 import "./loginForm.scss";
 import { Link } from "react-router-dom";
+import { PublicRouteLinks } from "../components/allRouteLinks/allRouteLinks";
 interface loginProps {
   showLogin: boolean;
 }
@@ -110,11 +111,7 @@ const LoginForm = (props: loginProps) => {
               onClick={submitFormData}
             />
           </form>
-          <div className="public_routes">
-            <Link to={routes.public.public1}>Public 1</Link>
-            <Link to={routes.public.public2}>Public 2</Link>
-            <Link to={routes.public.public3}>Public 3</Link>
-          </div>
+          <PublicRouteLinks />
         </div>
       </div>
     </div>

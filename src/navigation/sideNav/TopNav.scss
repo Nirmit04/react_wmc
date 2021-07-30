@@ -6,8 +6,11 @@
   align-items: center;
   background-color: #ffffff;
   .logo1121 {
-    font-weight: 500;
-    font-size: 20px;
+    height: 46px;
+    width: 106px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   .private_links {
     display: flex;
