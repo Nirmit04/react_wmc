@@ -4,14 +4,13 @@ import { routes } from "../navigation/routeConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions } from "../redux/actions/action";
 import { IState } from "../redux/reducers";
-import StorageService from "../services/storage";
 import "./loginForm.scss";
-import { Link } from "react-router-dom";
 import { PublicRouteLinks } from "../components/allRouteLinks/allRouteLinks";
+import storage from "../services/storage";
 interface loginProps {
   showLogin: boolean;
 }
-const storage = new StorageService();
+
 const LoginForm = (props: loginProps) => {
   const [error, setError] = useState("");
   const [formDetails, setFormDetails] = useState({ email: "", password: "" });

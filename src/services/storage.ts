@@ -17,4 +17,7 @@ export class StorageService {
     return localStorage.removeItem(key);
   }
 }
-export default StorageService;
+
+const storage = new StorageService();
+
+export default storage

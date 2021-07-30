@@ -1,18 +1,17 @@
 import { Route, Redirect } from "react-router-dom";
-import StorageService from "../services/storage";
+import storage from "../services/storage";
 import { routes } from "./routeConstants";
-const storgae = new StorageService();
 const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
   return (
     <Route
       {...rest}
       render={(props) => {
-        const tokens = storgae.getStorage("tokens");
-        const user = storgae.getStorage("userId");
+        const tokens = storage.getStorage("tokens");
+        const user = storage.getStorage("userId");
         if (tokens && user) {
           return <Component {...props} />;
         } else {
-          storgae.clearStorage();
+          storage.clearStorage();
           return (
             <Redirect
               to={{

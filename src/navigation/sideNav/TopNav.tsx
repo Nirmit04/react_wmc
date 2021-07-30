@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { clearStore } from "../../redux/actions/action";
 import { routes } from "../routeConstants";
 import logo11122 from "../../assets/logo11122.png";
+import storage from "../../services/storage";
 export interface SideMenuState {
   allRoutes: {
     private1: boolean;
@@ -16,7 +17,6 @@ export interface SideMenuState {
   };
 }
 
-const storage = new StorageService();
 export default function TopNav(): ReactElement {
   const history = useHistory();
   const dispatch = useDispatch();
