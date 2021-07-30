@@ -29,3 +29,21 @@ a:hover {
   justify-content: center;
   align-items: center;
 }
+.public_routes,
+.private_routes {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 18px;
+  margin-top: 18px;
+  .active {
+    text-decoration: none;
+    color: red;
+    border-bottom: 1px solid black;
+  }
+}
+.public_routes > * + * {
+  margin-left: 16px;
+}
+.private_routes > * + * {
+  margin-left: 16px;
+}

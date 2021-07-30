@@ -1,32 +1,28 @@
 import { actionTypes } from "../actions/actionTypes";
 
-export interface ILoginSuccessResponse {
-  accessToken: string;
-  refreshToken: string;
-  user: {
+export interface UserDetails {
+  id: string;
+  fullName: string;
+  email: string;
+  countryCode: string;
+  phoneNumber: string;
+  isVerified: boolean;
+  profileURLId: string;
+  organization: {
     id: string;
-    fullName: string;
-    email: string;
-    countryCode: string;
-    phoneNumber: string;
-    isVerified: boolean;
-    profileURLId: string;
-    organization: {
-      id: string;
-      name: string;
-      label: string;
-      logoURL: string;
-    };
-    roles: Array<string>;
+    name: string;
+    label: string;
+    logoURL: string;
   };
+  roles: Array<string>;
 }
 
 export interface ILoginState {
-  loginResponse: any;
+  userDetails: UserDetails;
 }
 
 const loginInitialState: ILoginState = {
-  loginResponse: null,
+  userDetails: null,
 };
 
 export const login = (
@@ -34,9 +30,8 @@ export const login = (
   action: { payload: any; type: string }
 ): ILoginState => {
   switch (action.type) {
-    case actionTypes.POST_LOGIN:
-      return { ...state, loginResponse: action.payload };
-
+    case actionTypes.USER_DETAILS:
+      return { ...state, userDetails: action.payload };
     default:
       return state;
   }

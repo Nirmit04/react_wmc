@@ -1,4 +1,5 @@
 import React from "react";
+import { PublicRouteLinks } from "../../components/allRouteLinks/allRouteLinks";
 import Card from "../../components/atoms/card/card";
 
 function Private2() {
@@ -21,6 +22,7 @@ function Private2() {
       ipsum' will uncover many web sites still in their infancy. Various
       versions have evolved over the years, sometimes by accident, sometimes on
       purpose (injected humour and the like).
+      <PublicRouteLinks />
     </Card>
   );
 }

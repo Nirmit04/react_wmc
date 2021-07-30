@@ -7,9 +7,9 @@ const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
     <Route
       {...rest}
       render={(props) => {
-        const tokens: any = JSON.parse(storgae.getStorage("tokens"));
+        const tokens = storgae.getStorage("tokens");
         const user = storgae.getStorage("userId");
-        if (tokens.accessToken && tokens.refreshToken && user) {
+        if (tokens && user) {
           return <Component {...props} />;
         } else {
           storgae.clearStorage();

@@ -1,5 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import {
+  PrivateRouteLinks,
+  PublicRouteLinks,
+} from "../../components/allRouteLinks/allRouteLinks";
 import Card from "../../components/atoms/card/card";
+import { routes } from "../../navigation/routeConstants";
 
 function Public3() {
   return (
@@ -21,6 +27,8 @@ function Public3() {
       ipsum' will uncover many web sites still in their infancy. Various
       versions have evolved over the years, sometimes by accident, sometimes on
       purpose (injected humour and the like).
+      <PublicRouteLinks />
+      <PrivateRouteLinks />
     </Card>
   );
 }

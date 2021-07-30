@@ -1,6 +1,8 @@
 import axios from "axios";
+import StorageService from "../../services/storage";
 import { actionTypes } from "./actionTypes";
 
+const storage = new StorageService();
 export const clearStore = () => {
   return (dispatch: any) => {
     dispatch({ type: actionTypes.CLEAR_STORE });
@@ -10,8 +12,21 @@ export const clearStore = () => {
 const postLoginDetails = (data: any): any => {
   return async (dispatch: any) => {
     let p = await axios.post("https://demo7951933.mockable.io/login", data);
-    dispatch({ type: actionTypes.POST_LOGIN, payload: p.data.data });
+    storage.setStorage(
+      "tokens",
+      JSON.stringify({
+        accessToken: "p.data.data.accessToken",
+        refreshToken: " p.data.data.refreshToken",
+      })
+    );
+    dispatch({ type: actionTypes.USER_DETAILS, payload: p.data.data.user });
+  };
+};
+const getUserDetails = (id: string): any => {
+  return async (dispatch: any) => {
+    let p = await axios.get("https://demo7951933.mockable.io/getUser");
+    dispatch({ type: actionTypes.USER_DETAILS, payload: p.data.data.user });
   };
 };
 
-export default postLoginDetails;
+export const Actions = { postLoginDetails, getUserDetails };

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { routes } from "../navigation/routeConstants";
 import { useDispatch, useSelector } from "react-redux";
-import postLoginDetails from "../redux/actions/action";
+import { Actions } from "../redux/actions/action";
 import { IState } from "../redux/reducers";
 import StorageService from "../services/storage";
 import "./loginForm.scss";
+import { Link } from "react-router-dom";
 interface loginProps {
   showLogin: boolean;
 }
@@ -16,9 +17,7 @@ const LoginForm = (props: loginProps) => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const loginDetails = useSelector(
-    (state: IState) => state.login.loginResponse
-  );
+  const userDetails = useSelector((state: IState) => state.login.userDetails);
 
   const submitFormData = (event: any) => {
     if (event) {
@@ -26,25 +25,29 @@ const LoginForm = (props: loginProps) => {
     }
 
     if (formDetails.email && isValid(formDetails.email)) {
-      // Send the data or store it in session storage
-      dispatch(postLoginDetails({ name: "gadsgsa" }));
+      dispatch(
+        Actions.postLoginDetails({
+          email: formDetails.email,
+          pwd: formDetails.password,
+        })
+      );
       setError("");
     }
   };
 
   useEffect(() => {
-    if (loginDetails && loginDetails !== {}) {
-      storage.setStorage(
-        "tokens",
-        JSON.stringify({
-          accessToken: loginDetails.accessToken,
-          refreshToken: loginDetails.refreshToken,
-        })
-      );
-      storage.setStorage("userId", loginDetails.user.id);
+    const tokens = storage.getStorage("tokens");
+    const id = storage.getStorage("userId");
+    {
+      if (tokens && id) {
+        history.push(routes.private.private1);
+      }
+    }
+    if (userDetails) {
+      storage.setStorage("userId", userDetails.id);
       history.push(routes.private.private1);
     }
-  }, [loginDetails]);
+  }, [userDetails]);
 
   const handleChange = (evt: any) => {
     setFormDetails((formDetails) => ({
@@ -107,6 +110,11 @@ const LoginForm = (props: loginProps) => {
               onClick={submitFormData}
             />
           </form>
+          <div className="public_routes">
+            <Link to={routes.public.public1}>Public 1</Link>
+            <Link to={routes.public.public2}>Public 2</Link>
+            <Link to={routes.public.public3}>Public 3</Link>
+          </div>
         </div>
       </div>
     </div>

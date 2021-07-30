@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./styles.css";
+import "./styles.scss";
 import LoginForm from "./login/LoginForm";
 import MainRouter from "./navigation/mainRouter";
 

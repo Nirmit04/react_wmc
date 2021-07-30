@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Link, NavLink, Route, Switch } from "react-router-dom";
 import { routes } from "./routeConstants";
 import Public1 from "../modules/public1";
 import Public2 from "../modules/public2";
