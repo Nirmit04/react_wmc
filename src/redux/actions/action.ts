@@ -1,8 +1,8 @@
 import axios from "axios";
-import StorageService from "../../services/storage";
+import storage from "../../services/storage";
 import { actionTypes } from "./actionTypes";
 
-const storage = new StorageService();
+
 export const clearStore = () => {
   return (dispatch: any) => {
     dispatch({ type: actionTypes.CLEAR_STORE });
@@ -15,8 +15,8 @@ const postLoginDetails = (data: any): any => {
     storage.setStorage(
       "tokens",
       JSON.stringify({
-        accessToken: "p.data.data.accessToken",
-        refreshToken: " p.data.data.refreshToken",
+        accessToken: p.data.data.accessToken,
+        refreshToken: p.data.data.refreshToken
       })
     );
     dispatch({ type: actionTypes.USER_DETAILS, payload: p.data.data.user });

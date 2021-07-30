@@ -8,14 +8,14 @@ import SideMenu from "./sideNav/TopNav";
 import { useDispatch, useSelector } from "react-redux";
 import { Actions, clearStore } from "../redux/actions/action";
 import { IState } from "../redux/reducers";
-import StorageService from "../services/storage";
 import { Card } from "react-bootstrap";
 import {
   PrivateRouteLinks,
   PublicRouteLinks,
 } from "../components/allRouteLinks/allRouteLinks";
+import storage from "../services/storage";
 
-const storgae = new StorageService();
+
 export default function PrivateRouter(): ReactElement {
   const dispatch = useDispatch();
   const userDetails = useSelector((state: IState) => state.login.userDetails);
@@ -24,10 +24,10 @@ export default function PrivateRouter(): ReactElement {
     try {
       if (userDetails) {
         const { id } = userDetails;
-        storgae.setStorage("userId", id);
+        storage.setStorage("userId", id);
         // RollBarObject.configure({ payload: { person: { id, email, username: fullName } } });
       } else {
-        const id = storgae.getStorage("userId");
+        const id = storage.getStorage("userId");
         if (id) {
           dispatch(Actions.getUserDetails(id));
         }
